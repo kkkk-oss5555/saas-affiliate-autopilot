@@ -10,7 +10,7 @@
     "evergreen": "5",
     "saturation": "3"
   },
-  "article": "generated\\articles\\sys_001-2026-09-03.md",
-  "image": "generated\\images\\sys_001-2026-09-03.png",
-  "queue": "generated\\publish_queue.csv"
+  "article": "generated/articles/sys_001-2026-09-03.md",
+  "image": "generated/images/sys_001-2026-09-03.png",
+  "queue": "generated/publish_queue.csv"
 }
