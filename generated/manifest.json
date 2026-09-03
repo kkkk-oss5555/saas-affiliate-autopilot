@@ -1,0 +1,16 @@
+{
+  "content_id": "sys_001-2026-09-03",
+  "topic": {
+    "topic_id": "sys_001",
+    "offer_id": "systeme_io",
+    "keyword": "Systeme.io 使い方",
+    "pain": "複数ツールの管理が面倒",
+    "angle": "無料プランで販売導線を一本化",
+    "intent": "5",
+    "evergreen": "5",
+    "saturation": "3"
+  },
+  "article": "generated\\articles\\sys_001-2026-09-03.md",
+  "image": "generated\\images\\sys_001-2026-09-03.png",
+  "queue": "generated\\publish_queue.csv"
+}
