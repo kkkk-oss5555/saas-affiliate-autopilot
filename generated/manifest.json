@@ -1,5 +1,5 @@
 {
-  "content_id": "sys_001-2026-09-03",
+  "content_id": "sys_001-2026-09-04",
   "topic": {
     "topic_id": "sys_001",
     "offer_id": "systeme_io",
@@ -10,7 +10,7 @@
     "evergreen": "5",
     "saturation": "3"
   },
-  "article": "generated/articles/sys_001-2026-09-03.md",
-  "image": "generated/images/sys_001-2026-09-03.png",
+  "article": "generated/articles/sys_001-2026-09-04.md",
+  "image": "generated/images/sys_001-2026-09-04.png",
   "queue": "generated/publish_queue.csv"
 }
