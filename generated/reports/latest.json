@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-09",
-  "days_since_launch": 6,
+  "generated_at": "2026-09-10",
+  "days_since_launch": 7,
   "offer_id": "systeme_io",
   "impressions": 0,
   "outbound_clicks": 0,
@@ -8,6 +8,6 @@
   "sales": 0,
   "revenue_jpy": 0,
   "ctr": 0,
-  "decision": "NOT_DUE",
-  "next_action": "7日目までデータを集める"
+  "decision": "GO",
+  "next_action": "母数不足。14日目まで継続"
 }
