@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+<rect width="1000" height="1500" fill="#f7f3ea"/>
+<rect x="70" y="70" width="860" height="1360" rx="42" fill="#15241d"/>
+<circle cx="820" cy="250" r="180" fill="#d9ff73" opacity=".95"/>
+<text x="120" y="190" fill="#d9ff73" font-family="Arial, sans-serif" font-size="42" font-weight="700">0円から検証</text>
+<foreignObject x="120" y="360" width="760" height="620">
+  <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,'Noto Sans JP',sans-serif;color:white;font-size:76px;font-weight:800;line-height:1.25;overflow-wrap:anywhere">Systeme.io 使い方</div>
+</foreignObject>
+<foreignObject x="120" y="1080" width="760" height="180">
+  <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,'Noto Sans JP',sans-serif;color:#d7dfda;font-size:38px;line-height:1.4">無料プランで販売導線を一本化</div>
+</foreignObject>
+<text x="120" y="1360" fill="#9eaaa3" font-family="Arial,sans-serif" font-size="28">広告・詳細はリンク先へ</text>
+</svg>
