@@ -153,10 +153,14 @@ FONT = {
     "Y":"100011000101010001000010000100", "0":"011101001110101110011000101110",
     "7":"111110000100010001000100001000", ".":"000000000000000000000110001100",
     "/":"000010001000100010001000010000", " ":"000000000000000000000000000000",
+    "J":"001110001000010000101001001100", "K":"100011001011100100101000110001",
+    "P":"111101000111110100001000010000", "Q":"011101000110001101011001001101",
+    "V":"100011000110001010100101000100", "W":"100011000110101101011101110001",
+    "X":"100011000101010001000101010001", "Z":"111110000100010001000100011111",
 }
 
 
-def build_png(path: Path):
+def build_png(path: Path, headline: str = "START GUIDE", topic_label: str = "SYSTEME.IO"):
     width, height = 1000, 1500
     bg, card, accent, white, muted = (247,243,234), (21,36,29), (217,255,115), (255,255,255), (190,204,196)
     pixels = bytearray(bg * (width * height))
@@ -180,10 +184,20 @@ def build_png(path: Path):
     rect(70, 70, 860, 1360, card)
     rect(120, 150, 500, 62, accent)
     text_line("START FREE", 145, 165, 7, card)
-    text_line("SYSTEME.IO", 120, 430, 12, white)
-    text_line("START GUIDE", 120, 560, 11, white)
-    rect(120, 790, 760, 8, accent)
-    text_line("TEST IN 7 DAYS", 120, 880, 8, accent)
+    words, lines, current = topic_label.upper().split(), [], ""
+    for word in words:
+        candidate = (current + " " + word).strip()
+        if len(candidate) > 15 and current:
+            lines.append(current)
+            current = word
+        else:
+            current = candidate
+    if current:
+        lines.append(current)
+    for index, line in enumerate(lines[:3]):
+        text_line(line[:15], 120, 410 + index * 100, 8, white)
+    rect(120, 750, 760, 8, accent)
+    text_line(headline, 120, 820, 8, accent)
     text_line("NO MONTHLY TOOL", 120, 1010, 8, muted)
     text_line("COST TO START", 120, 1110, 8, muted)
     text_line("AD / READ MORE", 120, 1330, 5, muted)

@@ -1,34 +1,21 @@
-# SaaS Affiliate Autopilot v1
+# SaaS Affiliate Autopilot
 
-Systeme.ioを最初の検証案件にした、固定費ほぼゼロのアフィリエイト運用パイプラインです。
-GitHub Actionsが毎日、案件DBからテーマを選び、記事・Pin文案・固定テンプレ画像・公開キュー・KPI判定を生成します。
+The weekly **SaaS affiliate autopilot** GitHub Action selects one unused English topic, writes a landing article with an affiliate disclosure and CTA, checks basic quality, creates three distinct Pin drafts and PNG graphics, adds Pin-level UTM links, and saves a queue. It runs without paid services or credentials. Previous Japanese content and queue rows remain intact.
 
-## v1の範囲
+## Normal operation
 
-- 自動: 案件DB読込 → テーマ選定 → 記事生成 → Pin 3案生成 → SVG画像生成 → 公開候補生成 → KPI集計 → 7/14/30日判定
-- 承認前: `generated/publish_queue.csv` のリンクから、Pinterestの公式作成画面を1件ずつ開いて最終確認・投稿
-- API承認後: GitHub Secretsを設定すると、承認済み行だけPinterest APIへ投稿可能
-- 人が行うこと: アカウント作成・本人確認・OAuth/Secret登録・各投稿の最終承認
+The workflow runs every Monday at 22:17 UTC. No daily action is needed. To run once manually: **Actions → SaaS affiliate autopilot → Run workflow**; leave `command=autopilot`. The run summary shows `selected_topic`, `quality_result`, `generated_article`, `pins_created`, `queue_status`, and `next_action`. Choose `dry_run=true` to preview without changing generated files or state. The workflow saves new files only after a normal run.
 
-## 最初の1サイクル
+Generated pages, images, queue (`generated/autopilot_queue.csv`) and reports are in `generated/`. The previous `generated/publish_queue.csv` and published Pin history are untouched. Pin destination URLs point to the repository's configured GitHub Pages address. Ensure GitHub Pages publishes `main` from the repository root before using those links publicly. The existing [systeme.io overview](https://smallbizaitools.systeme.io/ai-tools-small-business) is linked from each new article.
 
-```text
-1. config/settings.json の affiliate_id を設定
-2. GitHubへpush
-3. Actions > Build affiliate cycle > Run workflow
-4. generated/publish_queue.csv で候補を確認
-5. KPIを data/kpi.csv に追記（またはworkflow入力で記録）
-```
+## Pinterest access
 
-ローカルでは `python src/pipeline.py`、テストは `python -m unittest discover -s tests -v` です。追加パッケージは不要です。
+The current Developer app is **SaaS Affiliate Autopilot, ID 1607856**. Trial is pending. The publisher is OFF and all new queue rows are `WAITING_FOR_STANDARD`; no Pinterest API request is made by the content workflow. The rejected app 1607850 is never used.
 
-## 重要
+After Trial approval, connect app 1607856 via OAuth and test in Trial, then request Standard access. When Standard is actually approved, configure repository variables `PINTEREST_APP_ID=1607856`, `PINTEREST_ACCESS_TIER=standard`, `PINTEREST_PUBLISH_ENABLED=true` and repository secrets `PINTEREST_ACCESS_TOKEN`, `PINTEREST_BOARD_ID` for the **AI Tools for Small Business** board. The daily publisher workflow will then publish at most one waiting Pin per run and record the returned Pinterest ID. Keep the enable variable unset until Standard approval and confirm the Pages article and image URLs work. Tokens are never stored in the repository.
 
-- `affiliate_id` が `REPLACE_ME` の間は、誤投稿防止のため公開キューが `BLOCKED` になります。
-- Systeme.ioリンクは公式仕様に合わせ、`www`なしの `https://systeme.io/...?...sa=ID` を使います。
-- 誇張した収益表現や架空レビューは生成しません。記事とPinに広告開示を入れます。
-- APIトークンはリポジトリに保存せず、GitHub Secretsだけに保存してください。
-- 自動投稿の既定値はOFFです。`approved=true` の行だけが対象です。
+## Performance and content supply
 
-詳しいPinterest申請・暫定運用は [docs/pinterest-operations.md](docs/pinterest-operations.md) を参照してください。
+`data/performance.csv` accepts **daily increments**, with `date,topic_id,pin_id,impressions,outbound_clicks,signups,sales,revenue_jpy`. Import actual Pinterest/affiliate results when available; no results are invented. `generated/reports/performance.json` evaluates each topic after 7, 14 and 30 days. Missing or small samples remain `INSUFFICIENT_DATA`; strong results become `EXPAND` and add one related topic; weak results become `PAUSE` and remove that topic's pending expansion. Otherwise the decision is `KEEP`. Topic IDs and Pin IDs in the queue and UTM links allow later attribution. Unused seed topics are in `data/topics_en.csv`; after they are exhausted, the workflow reports `NONE` until new topics or performance-driven expansions are available.
 
+Run locally with `python src/autopilot.py --command autopilot` or `python src/autopilot.py --dry-run`. Tests: `python -m unittest discover -s tests -v`. No third-party Python packages are required.

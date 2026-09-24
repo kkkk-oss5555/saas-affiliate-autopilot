@@ -1,5 +1,7 @@
 # Pinterest運用：承認前と承認後
 
+> 新しい英語版autopilotの通常運用とキューは [README](../README.md) と `generated/autopilot_queue.csv` を参照。この文書の以下の手動手順は旧v1キュー向けの記録です。
+
 ## 承認前（v1の既定運用）
 
 1. GitHub Actionsで候補を生成する。
@@ -27,7 +29,7 @@
 - https://developers.pinterest.com/docs/key-concepts/access-tiers/
 - https://policy.pinterest.com/en/commercial-and-branded-content-guidelines
 
-## GitHub側の本番設定
+## 旧v1のGitHub設定記録
 
 Repository Settings → Secrets and variables → Actions に以下を登録します。
 
