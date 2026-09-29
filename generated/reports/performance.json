@@ -1,4 +1,16 @@
 {
-  "as_of": "2026-09-24",
-  "topics": []
+  "as_of": "2026-09-29",
+  "topics": [
+    {
+      "topic_id": "en_001",
+      "age_days": 5,
+      "window_days": 0,
+      "impressions": 0,
+      "outbound_clicks": 0,
+      "signups": 0,
+      "sales": 0,
+      "revenue_jpy": 0,
+      "decision": "INSUFFICIENT_DATA"
+    }
+  ]
 }
