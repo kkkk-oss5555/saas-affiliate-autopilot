@@ -1,10 +1,21 @@
 {
-  "as_of": "2026-09-29",
+  "as_of": "2026-10-06",
   "topics": [
     {
       "topic_id": "en_001",
-      "age_days": 5,
-      "window_days": 0,
+      "age_days": 12,
+      "window_days": 7,
+      "impressions": 0,
+      "outbound_clicks": 0,
+      "signups": 0,
+      "sales": 0,
+      "revenue_jpy": 0,
+      "decision": "INSUFFICIENT_DATA"
+    },
+    {
+      "topic_id": "en_002",
+      "age_days": 7,
+      "window_days": 7,
       "impressions": 0,
       "outbound_clicks": 0,
       "signups": 0,
