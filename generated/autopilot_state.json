@@ -23,6 +23,12 @@
       "keyword": "welcome email sequence for small business",
       "pain": "new subscribers receive no useful next step",
       "offer_id": "systeme_io"
+    },
+    "en_007": {
+      "created_at": "2026-10-20",
+      "keyword": "one page offer funnel",
+      "pain": "your offer has too many distracting pages",
+      "offer_id": "systeme_io"
     }
   },
   "paused": [],
