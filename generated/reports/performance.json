@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-10-20",
+  "as_of": "2026-10-27",
   "topics": [
     {
       "topic_id": "en_001",
-      "age_days": 26,
-      "window_days": 14,
+      "age_days": 33,
+      "window_days": 30,
       "impressions": 0,
       "outbound_clicks": 0,
       "signups": 0,
@@ -14,7 +14,7 @@
     },
     {
       "topic_id": "en_002",
-      "age_days": 21,
+      "age_days": 28,
       "window_days": 14,
       "impressions": 0,
       "outbound_clicks": 0,
@@ -25,7 +25,7 @@
     },
     {
       "topic_id": "en_003",
-      "age_days": 14,
+      "age_days": 21,
       "window_days": 14,
       "impressions": 0,
       "outbound_clicks": 0,
@@ -36,6 +36,17 @@
     },
     {
       "topic_id": "en_006",
+      "age_days": 14,
+      "window_days": 14,
+      "impressions": 0,
+      "outbound_clicks": 0,
+      "signups": 0,
+      "sales": 0,
+      "revenue_jpy": 0,
+      "decision": "INSUFFICIENT_DATA"
+    },
+    {
+      "topic_id": "en_007",
       "age_days": 7,
       "window_days": 7,
       "impressions": 0,

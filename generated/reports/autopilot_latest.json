@@ -1,7 +1,7 @@
 {
-  "selected_topic": "en_007",
+  "selected_topic": "en_004",
   "quality_result": "PASS",
-  "generated_article": "generated/articles/en_007.html",
+  "generated_article": "generated/articles/en_004.html",
   "pins_created": 3,
   "queue_status": "WAITING_FOR_STANDARD",
   "next_action": "Await Pinterest Standard access; queue is ready"

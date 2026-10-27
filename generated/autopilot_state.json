@@ -29,6 +29,12 @@
       "keyword": "one page offer funnel",
       "pain": "your offer has too many distracting pages",
       "offer_id": "systeme_io"
+    },
+    "en_004": {
+      "created_at": "2026-10-27",
+      "keyword": "online course launch checklist",
+      "pain": "you want to test a course idea before buying many tools",
+      "offer_id": "systeme_io"
     }
   },
   "paused": [],
