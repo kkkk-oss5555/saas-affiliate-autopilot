@@ -1,8 +1,8 @@
 {
-  "selected_topic": "en_008",
-  "quality_result": "PASS",
-  "generated_article": "generated/articles/en_008.html",
-  "pins_created": 3,
-  "queue_status": "WAITING_FOR_STANDARD",
-  "next_action": "Await Pinterest Standard access; queue is ready"
+  "selected_topic": "NONE",
+  "quality_result": "NOT_RUN",
+  "generated_article": "NONE",
+  "pins_created": 0,
+  "queue_status": "UNCHANGED",
+  "next_action": "Add new English topics to data/topics_en.csv"
 }
